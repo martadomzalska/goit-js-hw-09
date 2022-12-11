@@ -16,10 +16,28 @@ img {
   display: block;
   max-width: 100%;
 }
+#datetime-picker {
+  width: 220px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  font-size: 20px;
+  align-items: center;
+  margin: auto;
+  margin-top: 150px;
+  color: #555555;
+  border: 2px solid #555555;
+  border-radius: 4px;
+}
 .timer {
   display: flex;
   gap: 30px;
   margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #555555;
+  font-size: 25px;
 }
 .field {
   display: flex;
@@ -29,4 +47,28 @@ img {
 }
 .value {
   font-size: 40px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: baseline;
+  align-items: center;
+  margin-top: 100px;
+}
+.form button {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  color: #555555;
+  border: 2px solid #555555;
+  border-radius: 4px;
+  font-size: 20px;
+}
+.form label {
+  font-size: 25px;
+  color: #555555;
+}
+.form input {
+  width: 100px;
 }
