@@ -76,4 +76,3 @@ function addLeadingZero(value) {
     return value;
   }
 }
-console.log("ffffaaaaaaaaa")
