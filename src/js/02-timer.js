@@ -12,11 +12,10 @@ const options = {
     if (selectedDates[0].getTime() <= presentDate) {
       Notiflix.Notify.failure(`Please choose a date in the future`);
     } else {
-      Notiflix.Notify.success(`The chosen date is valid`);
       button.removeAttribute('disabled');
+
       button.addEventListener('click', () => {
-        Notiflix.Notify.warning(`To choose a new date, please refresh the page`);
-        button.setAttribute("disabled", "true");
+        button.setAttribute('disabled', 'true');
         intervalId = setInterval(() => {
           let presentDate = new Date().getTime();
           ms = selectedDates[0] - presentDate;
@@ -27,13 +26,26 @@ const options = {
             minutesValue.innerHTML = addLeadingZero(time.minutes);
             hoursValue.innerHTML = addLeadingZero(time.hours);
             daysValue.innerHTML = addLeadingZero(time.days);
-             
           } else {
             clearInterval(intervalId);
-            button.removeAttribute("disabled");
+            button.removeAttribute('disabled');
           }
         }, 1000);
       });
+
+      if (
+        secondsValue.innerHTML !== '00' &&
+        minutesValue.innerHTML !== '00' &&
+        daysValue !== '00' &&
+        hoursValue.innerHTML !== '00'
+      ) {
+        Notiflix.Notify.warning(
+          `To choose a new date, please refresh the page`
+        );
+        button.setAttribute('disabled', 'true');
+      } else {
+        Notiflix.Notify.success(`The chosen date is valid`);
+      }
     }
   },
 };

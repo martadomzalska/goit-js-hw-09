@@ -35,10 +35,12 @@ function getPromise(event) {
 
     delay += step;
   }
-  submitBtn.setAttribute("disabled", "true");
-    setTimeout(function () {
-      submitBtn.removeAttribute("disabled")
-    }, delay);
-  form.reset();
-  
+  submitBtn.setAttribute('disabled', 'true');
+
+  let buttonDelay = delay + 1000;
+
+  setTimeout(function () {
+    submitBtn.removeAttribute('disabled');
+    console.log(submitBtn);
+  }, buttonDelay);
 }
